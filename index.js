@@ -12,7 +12,7 @@ peerConnection1.setRemoteDescription(fakeSdp).then(function() {
   return peerConnection1.createAnswer();
 }).then(function(sdp) {
   console.log(sdp.sdp);
-  peerConnection1.setLocalDescription(sdp);
+  return peerConnection1.setLocalDescription(sdp);
 }).then(function() {
   console.log("SUCCESS!");
 }).catch(function(err) {
